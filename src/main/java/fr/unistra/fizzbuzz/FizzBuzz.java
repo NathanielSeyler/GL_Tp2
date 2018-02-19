@@ -1,16 +1,18 @@
 package fr.unistra.fizzbuzz;
 
-public class FizzBuzz {
+public class FizzBuzz /*implements Int2String*/ {
 
 
 	public String convert(int number)
 	{
-		if(number % 15 == 0)
-			return "FizzBuzz";
-		if(number % 5 == 0)
-			return "Buzz";
+		String rtn = "";
 		if(number % 3 ==0)
-			return "Fizz";
-		return Integer.toString(number);
+			rtn += "Fizz";
+		if(number % 5 == 0)
+			rtn +="Buzz";
+		if (rtn.isEmpty())
+			return Integer.toString(number);
+		else
+			return rtn;
 	}
 }
