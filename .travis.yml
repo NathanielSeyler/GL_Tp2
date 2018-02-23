@@ -1,4 +1,4 @@
 language: java
 sudo: false
-script: mvn verify && javadoc -private -sourcepath "src/main/java:src/test/java" -d doc/ fr.unistra.fizzbuzz
+script: gradle check && javadoc -private -sourcepath "src/main/java:src/test/java" -d docs/ fr.unistra.fizzbuzz
 
