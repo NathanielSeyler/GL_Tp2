@@ -1,6 +1,7 @@
 language: java
 sudo: false
-script: gradle check && javadoc -private -sourcepath "src/main/java:src/test/java" -d docs/ fr.unistra.fizzbuzz
+after_success:
+  - javadoc -private -sourcepath "src/main/java:src/test/java" -d docs/ fr.unistra.fizzbuzz
 deploy:
   provider: pages
   local-dir: docs
@@ -9,3 +10,4 @@ deploy:
   keep-history: true
   on:
     branch: master
+
