@@ -1,0 +1,10 @@
+language: java
+sudo: false
+script: gradle check && javadoc -private -sourcepath "src/main/java:src/test/java" -d docs/ fr.unistra.fizzbuzz
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
+  keep-history: true
+  on:
+    branch: master
